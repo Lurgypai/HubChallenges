@@ -1,0 +1,4 @@
+name: HubChallenges
+main: net.arcanemc.hubchallenges.HubChallenges
+version: 0.0.1
+depend: [Core]
