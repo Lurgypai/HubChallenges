@@ -11,7 +11,7 @@ public class ChallengeManager {
 	
 	public ChallengeManager() {
 		challenges = new ArrayList<Challenge>();
-		Challenge underThirty = new Challenge("underThrity", "Under Thirty", "Beat a map in under thirty seconds.", 1, false, 4000);
+		Challenge underThirty = new Challenge("underThirty", "Under Thirty", "Beat a map in under thirty seconds.", 1, false, 4000);
 		Challenge noStop = new Challenge("noStop", "Can't Stop", "Beat every map while sprinting continuously.", 4, true, 1000);
 		Challenge noCrouch = new Challenge("noCrouch", "No Crouching", "Beat every map witout crouching.", 4, true, 8000);
 		Challenge underThirtyNoCrouch = new Challenge("underThirtyNoCrouch", "Can't Stop, Won't Crouch", "Beat a map in under thirty seconds without crouching.", 1, false, 8000);
@@ -43,7 +43,7 @@ public class ChallengeManager {
 	
 	public void createTables() {
 		for (Challenge ch : this.challenges) {
-			String create = "CREATE TABLE IF NOT EXISTS " + ch.getId() + "(uuid VARCHAR(36), completed BIT, challengeid VARCHAR(25), repetitions INT(10), mapsCompleted VARCHAR(400))";
+			String create = "CREATE TABLE IF NOT EXISTS " + ch.getId() + " (uuid VARCHAR(36), completed BIT, challengeid VARCHAR(25), repetitions INT, mapsCompleted VARCHAR(400))";
 			try {
 				PreparedStatement stmnt = HubChallenges.getConnection().prepareStatement(create);
 				stmnt.executeUpdate();
