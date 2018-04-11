@@ -24,7 +24,7 @@ import net.md_5.bungee.api.ChatColor;
 
 public class HubChallenges extends Plugin {
 
-	public static final String HUBWORLD = "world";
+	public static final String HUBWORLD = "Lobby";
 	private static Connection conn;
 	private ParkourManager manager = new ParkourManager(this);
 	private UserFileManager userManager = new UserFileManager();
@@ -57,14 +57,14 @@ public class HubChallenges extends Plugin {
 		CustomEntity.registerEntites();
 		prepareNPC();
 		
-		ParkourMap red = loadParkourMap("&cRed&r", "red");
-		ParkourMap blue = loadParkourMap("&9Blue&r", "blue");
-		ParkourMap green = loadParkourMap("&aGreen&r", "green");
-		ParkourMap yellow = loadParkourMap("&eYellow&r", "yellow");
-		manager.addMap("red", red);
-		manager.addMap("blue", blue);
-		manager.addMap("green", green);
-		manager.addMap("yellow", yellow);
+		ParkourMap tower = loadParkourMap("&a&lTower Parkour&r", "tower");
+		ParkourMap village = loadParkourMap("&a&lVillage Parkour&r", "village");
+		//ParkourMap green = loadParkourMap("&aGreen&r", "green");
+		//ParkourMap yellow = loadParkourMap("&eYellow&r", "yellow");
+		manager.addMap("tower", tower);
+		manager.addMap("village", village);
+		//manager.addMap("green", green);
+		//manager.addMap("yellow", yellow);
 		manager.startUpdating();
 		
 		//fix green
@@ -79,7 +79,7 @@ public class HubChallenges extends Plugin {
 	
 	@Override
 	public void onStop() {
-		CustomEntity.clearCustomEntities("world");
+		CustomEntity.clearCustomEntities("Lobby");
 		manager.stopUpdating();
 	}
 	

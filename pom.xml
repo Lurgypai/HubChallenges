@@ -37,6 +37,10 @@
 			<id>spigot-repo</id>
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
+      <repository>
+      		<id>bukkit-repo</id>
+      		<url>http://repo.bukkit.org/content/groups/public/</url>
+    	</repository>
   		<repository>
     		<id>dmulloy2-repo</id>
     		<url>http://repo.dmulloy2.net/nexus/repository/public/</url>
